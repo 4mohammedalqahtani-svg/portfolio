@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Alqahtani — AI & Machine Learning</title>
+<meta name="description" content="Portfolio of Mohammed Sultan Alqahtani, Computer Science student specializing in AI & Machine Learning, Riyadh, Saudi Arabia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --espresso:#1A140F;
+  --panel:#241C15;
+  --panel-2:#2A211A;
+  --border:#3D3128;
+  --tan:#C8A97E;
+  --tan-bright:#D2B48C;
+  --cream:#EDE0D0;
+  --text:#E8DFD3;
+  --muted:#A6947F;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--espresso);
+  color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--tan);color:var(--espresso)}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15}
+a{color:var(--tan-bright);text-decoration:none}
+a:hover{color:var(--cream)}
+img,iframe{max-width:100%}
+:focus-visible{outline:2px solid var(--tan-bright);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 6vw;
+  background:rgba(26,20,15,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.brand{font-family:'Space Grotesk';font-weight:700;letter-spacing:.14em;color:var(--cream);font-size:.95rem}
+.brand .dot{color:var(--tan-bright)}
+.nav-links{display:flex;gap:28px;font-size:.9rem}
+.nav-links a{color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--cream)}
+@media(max-width:640px){.nav-links{gap:16px;font-size:.82rem}}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;
+  padding:60px 6vw 80px;
+  overflow:hidden;
+}
+.hero-inner{position:relative;z-index:1;max-width:820px}
+.hero h1{
+  font-size:clamp(2.6rem,7vw,4.6rem);
+  font-weight:700;
+  color:var(--cream);
+  margin-bottom:6px;
+}
+.hero h1 .accent{
+  background:linear-gradient(100deg,var(--cream) 10%,var(--tan-bright) 70%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.hero .role{
+  font-family:'Space Grotesk';
+  font-size:clamp(1rem,2.4vw,1.35rem);
+  color:var(--tan-bright);
+  font-weight:500;
+  margin-bottom:22px;
+}
+.hero p.tag{color:var(--muted);max-width:560px;margin:0 auto 36px;font-size:1.02rem}
+.btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;
+  padding:13px 28px;
+  border-radius:999px;
+  font-weight:600;font-size:.95rem;
+  font-family:'Space Grotesk';
+  transition:transform .15s ease,background .15s ease,color .15s ease;
+}
+.btn-primary{background:var(--tan-bright);color:var(--espresso)}
+.btn-primary:hover{background:var(--cream);color:var(--espresso);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--border);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--tan-bright);color:var(--tan-bright);transform:translateY(-2px)}
+.scroll-hint{
+  margin-top:64px;
+  font-family:'Space Grotesk';
+  font-size:.72rem;letter-spacing:.35em;
+  color:var(--muted);
+}
+
+/* ---------- Sections ---------- */
+section{padding:90px 6vw;max-width:1080px;margin:0 auto}
+.eyebrow{
+  font-family:'Space Grotesk';
+  font-size:.75rem;letter-spacing:.3em;
+  color:var(--tan-bright);
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+h2.section-title{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--cream);margin-bottom:34px}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+.about-grid p{color:var(--text);margin-bottom:16px}
+.fact-card{
+  background:var(--panel-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px;
+}
+.fact-card li{
+  list-style:none;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  font-size:.92rem;color:var(--muted);
+}
+.fact-card li:last-child{border-bottom:none}
+.fact-card li strong{color:var(--cream);font-weight:600;display:block;font-size:.95rem}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- Projects ---------- */
+.project-card{
+  background:var(--panel-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:30px;
+  margin-bottom:30px;
+  display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;
+  transition:border-color .2s ease;
+}
+.project-card:hover{border-color:var(--tan)}
+.project-card h3{font-size:1.35rem;color:var(--cream);margin-bottom:10px}
+.project-card .kind{font-size:.8rem;color:var(--tan-bright);font-family:'Space Grotesk';letter-spacing:.08em;margin-bottom:12px}
+.project-card p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  font-size:.75rem;font-weight:600;
+  font-family:'Space Grotesk';
+  padding:6px 13px;border-radius:999px;
+  background:rgba(200,169,126,.12);
+  color:var(--tan-bright);
+  border:1px solid rgba(200,169,126,.25);
+}
+.video-slot{
+  aspect-ratio:16/9;
+  border-radius:10px;
+  overflow:hidden;
+  background:var(--panel);
+  border:1px dashed var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:.85rem;
+  text-align:center;padding:14px;
+}
+.video-slot iframe{width:100%;height:100%;border:0}
+@media(max-width:760px){.project-card{grid-template-columns:1fr}}
+
+/* ---------- Skills ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.skill-group{
+  background:var(--panel-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:24px;
+}
+.skill-group h3{font-size:1rem;color:var(--tan-bright);margin-bottom:14px}
+
+/* ---------- Contact ---------- */
+.contact-box{
+  text-align:center;
+  background:var(--panel-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:56px 30px;
+}
+.contact-box p{color:var(--muted);max-width:460px;margin:0 auto 28px}
+.contact-meta{margin-top:22px;color:var(--muted);font-size:.88rem}
+.contact-list{
+  list-style:none;
+  max-width:520px;
+  margin:34px auto 0;
+  text-align:left;
+}
+.contact-list li{
+  display:flex;align-items:center;gap:12px;
+  padding:13px 4px;
+  border-bottom:1px solid var(--border);
+  font-size:.92rem;
+}
+.contact-list li:last-child{border-bottom:none}
+.contact-label{
+  font-family:'Space Grotesk';
+  font-size:.72rem;letter-spacing:.14em;
+  color:var(--tan-bright);
+  text-transform:uppercase;
+  width:78px;flex-shrink:0;
+}
+.contact-value{
+  flex:1;
+  color:var(--cream);
+  word-break:break-all;
+  user-select:all;
+}
+.copy-btn{
+  flex-shrink:0;
+  font-family:'Space Grotesk';
+  font-size:.75rem;font-weight:600;
+  padding:7px 14px;border-radius:999px;
+  background:rgba(200,169,126,.12);
+  color:var(--tan-bright);
+  border:1px solid rgba(200,169,126,.3);
+  cursor:pointer;
+  transition:background .15s ease,color .15s ease;
+}
+.copy-btn:hover{background:var(--tan-bright);color:var(--espresso)}
+.copy-btn.copied{background:var(--tan-bright);color:var(--espresso)}
+@media(max-width:520px){
+  .contact-list li{flex-wrap:wrap}
+  .contact-label{width:100%}
+}
+
+footer{
+  text-align:center;
+  padding:34px 6vw 44px;
+  color:var(--muted);
+  font-size:.82rem;
+  border-top:1px solid var(--border);
+}
+footer .ar{font-family:'IBM Plex Sans Arabic',sans-serif}
+
+/* ---------- Ask AI section (inline chat) ---------- */
+.ask-intro{
+  color:var(--muted);
+  max-width:640px;
+  margin:-18px 0 32px;
+  font-size:1rem;
+}
+
+.chat-container{
+  background:var(--panel-2);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  min-height:560px;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+
+.chat-head{
+  padding:20px 26px;
+  background:var(--panel);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:14px;
+}
+.chat-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--tan-bright);color:var(--espresso);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.chat-avatar svg{width:22px;height:22px}
+.chat-head-title strong{
+  font-family:'Space Grotesk',sans-serif;
+  color:var(--cream);
+  font-size:1.05rem;
+  display:block;
+}
+.chat-head-title span{
+  display:block;
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-size:.8rem;color:var(--muted);
+  margin-top:3px;
+}
+
+.chat-body{
+  flex:1;overflow-y:auto;
+  padding:28px 30px;
+  display:flex;flex-direction:column;gap:14px;
+  min-height:280px;max-height:440px;
+}
+.chat-body::-webkit-scrollbar{width:8px}
+.chat-body::-webkit-scrollbar-track{background:transparent}
+.chat-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.chat-body::-webkit-scrollbar-thumb:hover{background:var(--tan)}
+
+.msg{
+  max-width:78%;
+  padding:13px 18px;border-radius:16px;
+  font-size:.98rem;line-height:1.6;
+  white-space:pre-wrap;word-wrap:break-word;
+}
+.msg[dir]{unicode-bidi:plaintext}
+.msg.bot{background:var(--panel);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px}
+.msg.user{background:var(--tan-bright);color:var(--espresso);align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}
+.msg.err{background:rgba(160,60,50,.15);border:1px solid rgba(200,90,80,.4);color:#E8B4AC;align-self:flex-start;max-width:88%}
+
+.typing{display:flex;gap:6px;padding:14px 18px;align-self:flex-start}
+.typing i{width:8px;height:8px;border-radius:50%;background:var(--tan-bright);animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}
+.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+
+.chat-suggestions{
+  display:flex;flex-wrap:wrap;gap:8px;
+  padding:0 30px 18px;
+}
+.chat-suggestions button{
+  font-family:'Inter','IBM Plex Sans Arabic',sans-serif;
+  font-size:.85rem;
+  padding:8px 14px;border-radius:999px;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--muted);
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chat-suggestions button:hover{border-color:var(--tan-bright);color:var(--cream)}
+
+.chat-input{
+  display:flex;gap:12px;
+  padding:18px 22px;
+  border-top:1px solid var(--border);
+  background:var(--panel);
+}
+.chat-input input{
+  flex:1;
+  background:var(--espresso);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:14px 20px;
+  color:var(--text);
+  font-family:'Inter','IBM Plex Sans Arabic',sans-serif;
+  font-size:.98rem;
+}
+.chat-input input:focus{outline:none;border-color:var(--tan)}
+.chat-input button{
+  width:50px;height:50px;border-radius:50%;
+  background:var(--tan-bright);color:var(--espresso);
+  border:none;cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s ease;
+}
+.chat-input button:hover{background:var(--cream)}
+.chat-input button:disabled{opacity:.5;cursor:default}
+
+@media(max-width:640px){
+  .chat-head{padding:16px 18px}
+  .chat-body{padding:20px}
+  .chat-suggestions{padding:0 18px 14px}
+  .chat-input{padding:14px 16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">M<span class="dot">.</span>ALQAHTANI</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#ask-ai">Ask AI</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Mohammed <span class="accent">Alqahtani</span></h1>
+    <div class="role">Computer Science Student — AI &amp; Machine Learning</div>
+    <p class="tag">Building intelligent systems and LLM-powered applications, exploring the intersection of human-centered software and hardware design.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+      <a class="btn btn-ghost" id="cv-btn" href="#" target="_blank" rel="noopener">Download CV</a>
+    </div>
+    <div class="scroll-hint">SCROLL TO EXPLORE</div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="eyebrow">About</div>
+  <h2 class="section-title">A builder at the meeting point of AI and people</h2>
+  <div class="about-grid">
+    <div>
+      <p>I'm a Computer Science undergraduate at Imam Mohammad Ibn Saud Islamic University in Riyadh, focused on Artificial Intelligence and Machine Learning.</p>
+      <p>Through intensive bootcamps at Tuwaiq Academy — one on Large Language Models and one on Electronic Circuit Design &amp; Manufacturing — I've built hands-on experience that runs from prompt engineering and model fine-tuning down to PCB-level hardware.</p>
+      <p>What drives my work is human-centered design: intelligent systems should fit naturally into people's lives, whether that's an AI tutor that adapts to a learner or a health monitor that nudges better habits.</p>
+    </div>
+    <ul class="fact-card">
+      <li><strong>University</strong>Imam Mohammad Ibn Saud Islamic University</li>
+      <li><strong>Degree</strong>B.Sc. Computer Science — Class of 2027</li>
+      <li><strong>Training</strong>Tuwaiq Academy — LLM &amp; Circuit Design Bootcamps</li>
+      <li><strong>Location</strong>Riyadh, Saudi Arabia</li>
+      <li><strong>Languages</strong>Arabic (native) · English (working proficiency)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="eyebrow">Projects</div>
+  <h2 class="section-title">Selected work</h2>
+
+  <article class="project-card">
+    <div>
+      <div class="kind">PERSONAL PROJECT — N8N + AI AUTOMATION</div>
+      <h3>DocuCite — RAG Assistant with Verifiable Citations</h3>
+      <p>An AI workflow that answers questions strictly from uploaded documents and tags every claim with a numbered citation linked to its exact source file, reducing hallucination risk for real business use. Built on OpenAI's Responses API with the file_search tool after discovering that the more commonly documented Assistants API approach had been deprecated, then rebuilt from scratch on the current supported architecture.</p>
+      <div class="tags">
+        <span class="tag">n8n</span>
+        <span class="tag">OpenAI API</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Automation</span>
+      </div>
+    </div>
+    <div class="video-slot" data-video="rag">Demo video — coming soon</div>
+  </article>
+
+  <article class="project-card">
+    <div>
+      <div class="kind">PERSONAL PROJECT</div>
+      <h3>Najd — AI English Language Tutor</h3>
+      <p>An AI-powered English tutoring application that delivers interactive lessons and conversational practice, built on the OpenAI API and developed with AI-assisted tools (Claude).</p>
+      <div class="tags">
+        <span class="tag">OpenAI API</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">AI-Assisted Development</span>
+      </div>
+    </div>
+    <div class="video-slot" data-video="najd">Demo video — coming soon</div>
+  </article>
+
+  <article class="project-card">
+    <div>
+      <div class="kind">COURSE PROJECT — HUMAN-CENTERED INTELLIGENT SYSTEMS DESIGN</div>
+      <h3>AI Health Monitor</h3>
+      <p>An intelligent health monitor that tracks the user's lifestyle patterns and sends personalized notifications that encourage healthier habits, designed around human-centered principles.</p>
+      <div class="tags">
+        <span class="tag">AI</span>
+        <span class="tag">Human-Centered Design</span>
+      </div>
+    </div>
+    <div class="video-slot" data-video="health">Demo video — coming soon</div>
+  </article>  <article class="project-card">
+    <div>
+      <div class="kind">COURSE PROJECT — VALUES DEVELOPMENT</div>
+      <h3>Najdi Flappy Bird</h3>
+      <p>A Flappy Bird-style game reimagined with a Saudi Najdi cultural theme — blending classic gameplay mechanics with local heritage visuals and identity.</p>
+      <div class="tags">
+        <span class="tag">Game Development</span>
+        <span class="tag">Cultural Design</span>
+      </div>
+    </div>
+    <div class="video-slot" data-video="flappy">Demo video — coming soon</div>
+  </article>
+  <article class="project-card">
+    <div>
+      <div class="kind">PERSONAL PROJECT — N8N AUTOMATION</div>
+      <h3>Aya Bot — بوت آية</h3>
+      <p>A Telegram bot built with n8n that sends a Quranic verse every day, creating a simple daily reminder to stay connected with the Holy Quran and help prevent abandoning its recitation.</p>
+      <div class="tags">
+        <span class="tag">n8n</span>
+        <span class="tag">Telegram Bot</span>
+        <span class="tag">Automation</span>
+      </div>
+    </div>
+    <div class="video-slot" data-video="aya">Demo video — coming soon</div>
+  </article>
+
+  <article class="project-card">
+    <div>
+      <div class="kind">PERSONAL PROJECT</div>
+      <h3>Riyadh Go</h3>
+      <p>A mobile app and website for Riyadh Metro riders, designed and built with FlutterFlow — helping users navigate the metro system with a clean, low-code-powered interface.</p>
+      <div class="tags">
+        <span class="tag">FlutterFlow</span>
+        <span class="tag">Mobile App</span>
+        <span class="tag">UX Design</span>
+      </div>
+    </div>
+    <div class="video-slot" data-video="riyadhgo">Demo video — coming soon</div>
+  </article>
+
+</section>
+
+<section id="skills">
+  <div class="eyebrow">Skills</div>
+  <h2 class="section-title">What I work with</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>AI &amp; LLMs</h3>
+      <div class="tags">
+        <span class="tag">OpenAI API Integration</span>
+        <span class="tag">Prompt Engineering</span>
+        <span class="tag">Model Fine-tuning</span>
+        <span class="tag">AI-Assisted Development</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Machine Learning</h3>
+      <div class="tags">
+        <span class="tag">Data Analysis</span>
+        <span class="tag">Predictive Modeling</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>App &amp; Web Development</h3>
+      <div class="tags">
+        <span class="tag">FlutterFlow</span>
+        <span class="tag">Low-code Solutions</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Hardware</h3>
+      <div class="tags">
+        <span class="tag">PCB Design</span>
+        <span class="tag">Circuit Troubleshooting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ask-ai">
+  <div class="eyebrow">Ask AI</div>
+  <h2 class="section-title">Ask AI about Mohammed</h2>
+  <p class="ask-intro">Chat with the AI assistant to learn about my studies, projects, and skills — in Arabic or English. تحدث مع المساعد الذكي عني.</p>
+
+  <div class="chat-container">
+    <div class="chat-head">
+      <div class="chat-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="chat-head-title">
+        <strong>Mohammed's AI Assistant</strong>
+        
+      </div>
+    </div>
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-suggestions" id="chat-suggestions">
+      <button data-q="What did Mohammed study?">What did he study?</button>
+      <button data-q="Tell me about his AI projects">Tell me about his projects</button>
+      <button data-q="ما هي مهارات محمد التقنية؟">ما مهاراته؟</button>
+      <button data-q="كيف أتواصل مع محمد؟">كيف أتواصل معه؟</button>
+    </div>
+    <form class="chat-input" id="chat-form">
+      <input type="text" id="chat-text" placeholder="Ask about Mohammed… اسأل عن محمد" autocomplete="off" maxlength="500">
+      <button type="submit" id="chat-send" aria-label="Send">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="eyebrow">Contact</div>
+  <div class="contact-box">
+    <h2 class="section-title" style="margin-bottom:14px">Let's talk</h2>
+    <p>Interested in my work, or have a question the assistant can't answer? Reach out directly.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:4mohammed.alqahtani@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/4mohammed-alqahtani" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <ul class="contact-list">
+      <li>
+        <span class="contact-label">Email</span>
+        <span class="contact-value" id="cv-email">4mohammed.alqahtani@gmail.com</span>
+        <button class="copy-btn" data-copy="4mohammed.alqahtani@gmail.com" aria-label="Copy email">Copy</button>
+      </li>
+      <li>
+        <span class="contact-label">Phone</span>
+        <span class="contact-value" dir="ltr">+966 54 480 2261</span>
+        <button class="copy-btn" data-copy="+966544802261" aria-label="Copy phone number">Copy</button>
+      </li>
+      <li>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">linkedin.com/in/4mohammed-alqahtani</span>
+        <button class="copy-btn" data-copy="https://www.linkedin.com/in/4mohammed-alqahtani" aria-label="Copy LinkedIn URL">Copy</button>
+      </li>
+    </ul>
+    <div class="contact-meta">Riyadh, Saudi Arabia</div>
+  </div>
+</section>
+
+<footer>
+  <span class="ar">صُنع بمساعدة الذكاء الاصطناعي</span> · Built with AI · © 2026 Mohammed Alqahtani
+</footer>
+
+<script>
+/* ================================================================
+   CONFIG — الشي الوحيد اللي تحتاج تعدله بيدك 👇
+   حط "معرّف" فيديو اليوتيوب فقط (الجزء اللي بعد v= في الرابط)
+   مثال: الرابط https://www.youtube.com/watch?v=AbC123xYz
+          المعرف هو  AbC123xYz
+   ورابط سيرتك الذاتية (Google Drive عام أو أي رابط مباشر)
+   ================================================================ */
+const CONFIG = {
+  YOUTUBE_ID_RAG: "Wmgix5HdjVg",       // معرف فيديو مشروع RAG
+  YOUTUBE_ID_NAJD: "RpxXEpujYY4",     // معرف فيديو مشروع نجد
+  YOUTUBE_ID_HEALTH: "dZTZ6WJDKjM",   // معرف فيديو AI Health Monitor
+  YOUTUBE_ID_FLAPPY: "q5P5o-2RKD8",   // معرف فيديو Najdi Flappy Bird
+  YOUTUBE_ID_RIYADHGO: "9SQJ1R47U10", // معرف فيديو رياض قو
+  YOUTUBE_ID_AYA: "ystY7e5dfyY",       // معرف فيديو بوت آية
+  CV_LINK: "https://drive.google.com/drive/folders/15f6zTddgQYvALbxH9VqhxTWmmImtc8T1?usp=sharing"              // رابط تحميل السيرة الذاتية
+};
+/* ================================================================ */
+
+// Wire up videos + CV from CONFIG
+(function initConfig(){
+  const slots = {rag: CONFIG.YOUTUBE_ID_RAG, najd: CONFIG.YOUTUBE_ID_NAJD, health: CONFIG.YOUTUBE_ID_HEALTH, flappy: CONFIG.YOUTUBE_ID_FLAPPY, riyadhgo: CONFIG.YOUTUBE_ID_RIYADHGO, aya: CONFIG.YOUTUBE_ID_AYA};
+  document.querySelectorAll('.video-slot').forEach(slot=>{
+    const id = slots[slot.dataset.video];
+    if(id){
+      slot.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'" title="Project demo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
+      slot.style.border = 'none';
+    }
+  });
+  const cvBtn = document.getElementById('cv-btn');
+  if(CONFIG.CV_LINK){ cvBtn.href = CONFIG.CV_LINK; }
+  else { cvBtn.addEventListener('click', e=>{ e.preventDefault(); alert('CV link coming soon — contact 4mohammed.alqahtani@gmail.com'); }); }
+})();
+
+// ---------- Copy buttons ----------
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    try{
+      await navigator.clipboard.writeText(btn.dataset.copy);
+    }catch{
+      // fallback for older browsers
+      const ta = document.createElement('textarea');
+      ta.value = btn.dataset.copy;
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    const old = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent = old; btn.classList.remove('copied'); }, 1600);
+  });
+});
+
+// ---------- Chat ----------
+const body      = document.getElementById('chat-body');
+const form      = document.getElementById('chat-form');
+const input     = document.getElementById('chat-text');
+const send      = document.getElementById('chat-send');
+const suggBox   = document.getElementById('chat-suggestions');
+const history   = []; // {role:'user'|'model', text}
+
+const isArabic = s => /[\u0600-\u06FF]/.test(s);
+
+function addMsg(text, cls){
+  const div = document.createElement('div');
+  div.className = 'msg ' + cls;
+  div.dir = isArabic(text) ? 'rtl' : 'ltr';
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+  return div;
+}
+
+function showTyping(){
+  const t = document.createElement('div');
+  t.className = 'typing'; t.id = 'typing';
+  t.innerHTML = '<i></i><i></i><i></i>';
+  body.appendChild(t);
+  body.scrollTop = body.scrollHeight;
+}
+function hideTyping(){ const t = document.getElementById('typing'); if(t) t.remove(); }
+
+// Show welcome messages on page load
+addMsg("Hi! I'm Mohammed's AI assistant. Ask me anything about his studies, bootcamps, AI projects, or skills!", 'bot');
+addMsg("مرحبًا! أنا المساعد الذكي لمحمد. اسألني عن دراسته، معسكراته التقنية، مشاريعه، أو مهاراته!", 'bot');
+
+// Suggestion chips
+suggBox.querySelectorAll('button').forEach(b => {
+  b.addEventListener('click', () => {
+    input.value = b.dataset.q;
+    form.requestSubmit();
+  });
+});
+
+function getPortfolioProjects(){
+  return Array.from(document.querySelectorAll('#projects .project-card')).map(card => ({
+    title: card.querySelector('h3')?.textContent.trim() || '',
+    type: card.querySelector('.kind')?.textContent.trim() || '',
+    description: card.querySelector('p')?.textContent.trim() || '',
+    technologies: Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.trim()).filter(Boolean)
+  })).filter(project => project.title);
+}
+
+async function sendMessage(text){
+  addMsg(text, 'user');
+  history.push({role:'user', text});
+  suggBox.style.display = 'none'; // hide suggestions after first message
+  showTyping();
+
+  try{
+    const res = await fetch('/.netlify/functions/chat', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        message: text,
+        history: history.slice(-12, -1),
+        projects: getPortfolioProjects()
+      })
+    });
+    hideTyping();
+    if(!res.ok){ throw new Error('HTTP ' + res.status); }
+    const data = await res.json();
+    if(!data.reply){ throw new Error('empty'); }
+    addMsg(data.reply, 'bot');
+    history.push({role:'model', text:data.reply});
+  }catch(err){
+    hideTyping();
+    const msg = isArabic(text)
+      ? "عذرًا، المساعد غير متاح مؤقتًا — تقدر تتواصل مع محمد مباشرة على 4mohammed.alqahtani@gmail.com"
+      : "Sorry, the assistant is temporarily unavailable — you can contact Mohammed directly at 4mohammed.alqahtani@gmail.com";
+    addMsg(msg, 'err');
+  }
+}
+
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  send.disabled = true;
+  await sendMessage(text);
+  send.disabled = false;
+  input.focus();
+});
+</script>
+</body>
+</html>
